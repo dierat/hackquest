@@ -10,7 +10,8 @@ Most basic features needed for version 1.0:
   <li><strike>have a header with login buttons</strike></li>
   <li><strike>list of all potential team members in a collection</strike></li>
   <li><strike>list of all potential monsters in a collection</strike></li>
-  <li>on startup, randomly choose 4 team members and add their id's to user's current team collection</li>
+  <li>have a saved games collection to hold users current team, monsters, and level</li>
+  <li>on user creation, add new document to saved games for that user with 4 randomly selected team members</li>
   <li>list current team members on screen (name, photo, and stamina)</li>
   <li>on startup, copy ids of first level monsters into user's current monster's collection</li>
   <li>list of current monsters in a collection and shown on screen (icon + name?)</li>
