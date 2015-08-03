@@ -26,5 +26,24 @@ if (Meteor.isServer) {
         });
       });
     }
+
+    if (Monsters.find().count() === 0){
+      var techs = [
+        ['javascript', 100],
+        ['grunt', 200],
+        ['node', 400],
+        ['mongodb', 500],
+        ['angular', 700],
+        ['coffeescript', 900],
+        ['backbone', 1000],
+      ];
+      techs.forEach(function(tech){
+        Monsters.insert({
+          tech: tech[0],
+          icon: tech[0] + '.png',
+          stam: tech[1]
+        });
+      });
+    }
   });
 }
