@@ -78,6 +78,10 @@ header {
   max-width: 70px;
 }
 
+.characterInfo {
+  text-align: right;
+}
+
 .console {
   text-align: center;
   font-size: 14px;
