@@ -30,7 +30,10 @@ if (Meteor.isClient) {
         userid: Meteor.userId(),
         level: 0,
         characters: team.slice(0,4),
-        monsters: monsters
+        monsters: monsters,
+        messages: [
+          "You've created a new game!"
+        ]
       });
     }
   });
