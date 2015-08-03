@@ -15,8 +15,18 @@ header {
   margin: 30px;
 }
 
+
+/* main login page */
+
 .mainLogin {
   text-align: center;
   margin-top: 100px;
-  margin-left: 100px;
+  margin-left: 200px;
+}
+
+/* 'Sign in' dropdown link on main login page */
+#login-sign-in-link,
+/* 'Close' dropdown link on main login page */
+.mainLogin .login-close-text {
+  display: none;
 }
