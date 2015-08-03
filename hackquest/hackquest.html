@@ -41,7 +41,9 @@
   <div class="battle">
     <div class="monsters">
       {{#each monsters}}
-        <div class="monster">{{this}}</div>
+        <div class="monster">
+          <img src={{this.icon}}>
+        </div>
       {{/each}}
     </div>
     <div class="characters">

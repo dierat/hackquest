@@ -58,8 +58,8 @@ if (Meteor.isClient) {
       return Games.findOne({userId: Meteor.userId()}).messages;
     },
     monsters: function(){
-      var currentMonsters = Games.findOne({userId: Meteor.userId()}).monsters;
-      return 
+      console.log(Games.findOne({userId: Meteor.userId()}).monsters);
+      return Games.findOne({userId: Meteor.userId()}).monsters;
     }
   });
 }
