@@ -18,27 +18,28 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
-
+Hack Quest
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
-
+This product is for anyone who has time to kill and wants to live out the fantasy of overcoming evil web technologies without actually doing so!
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
-
+A turn-based RPG battle game where the valiant students at Hack Reactor fight the malevolent technologies of web development. A fun, light-hearted game where all your wildest dreams come true!
 ## Problem ##
   > Describe the problem your product solves.
-
+Ever been bored or felt defeated by confusing technologies with poor documentation?
 ## Solution ##
   > Describe how your product elegantly solves the problem.
-
+Now you can fight away boredom and live out your fantasies of defeating evil frameworks for good!
 ## Quote from You ##
   > A quote from a spokesperson in your company.
-
+"It's the game I always wanted to play. Now I can, and so can you!"
 ## How to Get Started ##
   > Describe how easy it is to get started.
-
+Just create an account and start playing, today!
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
-
+"It was so fun I laughed until I puked but it was still great!"
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+Just visit hackquest.meteor.come and create an account today!
