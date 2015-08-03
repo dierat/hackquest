@@ -1,3 +1,7 @@
+Characters = new Mongo.Collection('characters');
+Monsters = new Mongo.Collection('monsters');
+
+
 if (Meteor.isClient) {
   // counter starts at 0
   Session.setDefault('counter', 0);
