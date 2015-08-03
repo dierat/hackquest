@@ -27,7 +27,7 @@ if (Meteor.isClient) {
       }
       // create a new game save for the new user
       Games.insert({
-        userid: Meteor.userId(),
+        userId: Meteor.userId(),
         level: 0,
         characters: team.slice(0,4),
         monsters: monsters,
@@ -35,6 +35,12 @@ if (Meteor.isClient) {
           "You've created a new game!"
         ]
       });
+    }
+  });
+
+  Template.gameScreen.helpers({
+    messages: function(){
+      return Games.findOne({userId: Meteor.userId()}).messages;
     }
   });
 }

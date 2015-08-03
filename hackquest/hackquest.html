@@ -4,7 +4,7 @@
 </head>
 
 <body>
- {{> main}}}
+ {{> main}}
 </body>
 
 
@@ -23,7 +23,7 @@
   {{#unless currentUser}}
     {{> loginScreen}}
   {{else}}
-
+    {{> gameScreen}}
   {{/unless}}
 </template>
 
@@ -38,7 +38,17 @@
 
 
 <template name="gameScreen">
-  <div class="container">
-
+  <div class="battle">
+    <div class="monsters">
+      
+    </div>
+    <div class="characters">
+      
+    </div>
+  </div>
+  <div class="console">
+    {{#each messages}}
+      <p>{{this}}</p>
+    {{/each}}
   </div>
 </template>
