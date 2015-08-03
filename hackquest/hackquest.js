@@ -13,6 +13,20 @@ if (Meteor.isClient) {
   Template.loginScreen.rendered = function() {
     Accounts._loginButtonsSession.set('dropdownVisible', true);
   };
+
+  Template.main.events({
+    'click .newGame': function(){
+      var team = Characters.find().map(function(c){return c._id;});
+      var monsters = Monsters.find().map(function(m){return m._id;});
+      // create a new game save for the new user
+      Games.insert({
+        userid: Meteor.userId(),
+        level: 0,
+        characters: team.slice(0,4),
+        monsters: monsters
+      });
+    }
+  });
 }
 
 
@@ -39,12 +53,15 @@ if (Meteor.isServer) {
         ['coffeescript', 900],
         ['backbone', 1000],
       ];
+      var count = 0;
       techs.forEach(function(tech){
         Monsters.insert({
           tech: tech[0],
           icon: tech[0] + '.png',
-          stam: tech[1]
+          stam: tech[1],
+          level: count
         });
+        count++;
       });
     }
   });

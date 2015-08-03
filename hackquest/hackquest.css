@@ -12,7 +12,12 @@ header {
 }
 
 .header-links {
-  margin: 30px;
+  margin: 20px;
+}
+
+.newGame {
+  font-family: 'Press Start 2P', cursive;
+  padding: 5px;
 }
 
 
