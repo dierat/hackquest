@@ -40,7 +40,9 @@
 <template name="gameScreen">
   <div class="battle">
     <div class="monsters">
-      
+      {{#each monsters}}
+        <div class="monster">{{this}}</div>
+      {{/each}}
     </div>
     <div class="characters">
       
