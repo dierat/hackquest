@@ -1,1 +1,15 @@
-/* CSS declarations go here */
+body {
+  margin: 0;
+  color: white;
+  background-color: black;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  boder-bottom: 1px white;
+}
+
+.header-links {
+  margin: 30px;
+}
