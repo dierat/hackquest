@@ -47,7 +47,24 @@
       {{/each}}
     </div>
     <div class="characters">
-      
+      {{#each characters}}
+
+        <p>
+          <div class="character">
+
+          <div class="characterImage">
+            <img src={{this.icon}}>
+          </div>
+
+          <div class="characterInfo">
+            <p>NAME: {{this.name}}</p>
+            <p>STAM: {{this.stam}}</p>
+          </div>
+
+          </div>
+        </p>
+
+      {{/each}}
     </div>
   </div>
   <div class="console">

@@ -13,11 +13,11 @@ Most basic features needed for version 1.0:
   <li><strike>have a saved games collection to hold users current team, monsters, and level</strike></li>
   <li><strike>when the new game button is clicked, add new document to saved games for that user with 4 randomly selected team members</strike></li>
   <li><strike>list current messages in the game console</strike></li>
-  <li>list of current monsters in a collection and shown on screen (icon + name?)</li>
-  <li>list current team members on screen (name, photo, and stamina)</li>
+  <li><strike>list of current monsters in a collection and shown on screen (icon + name?)</strike></li>
+  <li><strike>list current team members on screen (name, photo, and stamina)</strike></li>
   <li>monsters should have an ability that reduces a characters' stamina</li>
   <li>characters should have an ability that reduces a monster's health</li>
-  <li>the user should be able to choose which monster each of the current characters (each in order until the end of the list)</li>
+  <li>the user should be able to choose which monster each of the current characters attack (each in order until the end of the list)</li>
   <li>if a monster's health is reduced to 0, it is removed from the current game</li>
   <li>if no monsters are currently in the game, the player wins</li>
   <li>when the player has finished choosing the actions of the characters, each monster should attack a random character</li>

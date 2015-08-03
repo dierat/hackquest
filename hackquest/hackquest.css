@@ -45,26 +45,43 @@ header {
 .monsters,
 .characters {
   border: 1px solid white;
-  width: 300px;
-  height: 500px;
+  max-width: 400px;
   margin: 10px;
+  padding: 10px;
+}
+
+.monsters,
+.character {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.characters {
+  width: 100%;
 }
 
 .monsters {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: space-around;
+  max-width: 500px;
+}
+
+.character {
+  justify-content: space-between;
 }
 
 .monster {
   margin: 20px;
 }
 
-.monster img {
+.monster img,
+.characterImage img {
   max-width: 70px;
 }
 
 .console {
   text-align: center;
   font-size: 14px;
+  line-height: 1.5em;
+  max-width: 700px;
+  margin: 0 auto;
 }
