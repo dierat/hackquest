@@ -17,10 +17,25 @@ if (Meteor.isClient) {
   Template.main.events({
     'click .newGame': function(){
       // grab id's from the characters and monsters documents
-      var team = Characters.find().map(function(c){return c._id;});
-      var monsters = Monsters.find().map(function(m){return m._id;});
+      var team = Characters.find().map(function(c){
+        return {
+          id: c._id,
+          name: c.name,
+          icon: c.icon,
+          stam: c.stam
+        };
+      });
+      var monsters = Monsters.find().map(function(m){
+        return {
+          id: m._id,
+          name: m.name,
+          icon: m.icon,
+          stam: m.stam,
+          level: m.level
+        };
+      });
       // find and delete user's existing game if one exists
-      var currenGame = Games.findOne({userid: Meteor.userId()});
+      var currenGame = Games.findOne({userId: Meteor.userId()});
       if (currenGame){
         var gameId = currenGame._id;
         Games.remove({_id: gameId});
@@ -41,6 +56,10 @@ if (Meteor.isClient) {
   Template.gameScreen.helpers({
     messages: function(){
       return Games.findOne({userId: Meteor.userId()}).messages;
+    },
+    monsters: function(){
+      var currentMonsters = Games.findOne({userId: Meteor.userId()}).monsters;
+      return 
     }
   });
 }
@@ -72,7 +91,7 @@ if (Meteor.isServer) {
       var count = 0;
       techs.forEach(function(tech){
         Monsters.insert({
-          tech: tech[0],
+          name: tech[0],
           icon: tech[0] + '.png',
           stam: tech[1],
           level: count
