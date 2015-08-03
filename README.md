@@ -5,11 +5,11 @@ A turn-based battle rpg where the valiant students at Hack Reacor battle the mal
 Most basic features needed for version 1.0:
 (Would love to have all this done by the end of day 1)
 <ul>
-  <li>add user accounts</li>
-  <li>add a login page that appears instead of main page if user is not logged in</li>
-  <li>have a header with login buttons</li>
-  <li>list of all potential team members in a collection</li>
-  <li>list of all potential monsters in a collection</li>
+  <li><strike>add user accounts</strike></li>
+  <li><strike>add a login page that appears instead of main page if user is not logged in</strike></li>
+  <li><strike>have a header with login buttons</strike></li>
+  <li><strike>list of all potential team members in a collection</strike></li>
+  <li><strike>list of all potential monsters in a collection</strike></li>
   <li>on startup, randomly choose 4 team members and add their id's to user's current team collection</li>
   <li>list current team members on screen (name, photo, and stamina)</li>
   <li>on startup, copy ids of first level monsters into user's current monster's collection</li>
