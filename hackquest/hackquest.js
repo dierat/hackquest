@@ -1,5 +1,6 @@
 Characters = new Mongo.Collection('characters');
 Monsters = new Mongo.Collection('monsters');
+Games = new Mongo.Collection('games');
 
 
 if (Meteor.isClient) {
@@ -13,6 +14,7 @@ if (Meteor.isClient) {
     Accounts._loginButtonsSession.set('dropdownVisible', true);
   };
 }
+
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
