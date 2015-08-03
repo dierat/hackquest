@@ -50,6 +50,20 @@ header {
   margin: 10px;
 }
 
+.monsters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.monster {
+  margin: 20px;
+}
+
+.monster img {
+  max-width: 70px;
+}
+
 .console {
   text-align: center;
   font-size: 14px;
