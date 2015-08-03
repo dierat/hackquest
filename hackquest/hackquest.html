@@ -7,14 +7,25 @@
   <header>
     <h1>HACK QUEST</h1>
     <span class="header-links">
-      {{> loginButtons}}
+      {{#if currentUser}} {{> loginButtons}} {{/if}}
     </span>
   </header>
 
-  {{> hello}}
+  {{#unless currentUser}}
+    {{> loginScreen}}
+  {{else}}
+
+  {{/unless}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="loginScreen">
+  <div class="mainLogin">
+    {{> loginButtons align="right"}}
+  </div>
+</template>
+
+<template name="gameScreen">
+  <div class="container">
+
+  </div>
 </template>
