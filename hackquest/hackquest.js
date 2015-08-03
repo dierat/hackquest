@@ -16,6 +16,15 @@ if (Meteor.isClient) {
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
-    // code to run on server at startup
+    if (Characters.find().count() === 0){
+      var names = ["Alex", "Andrey", "Charles", "Chris", "Cliff", "David", "Diedra", "Derek", "Eric", "Greg", "Hailey", "Jonathan", "Kamerynn", "Kevin", "Ken", "Logan", "Luke", "Marq", "Nate", "Nick", "Owen", "Peter", "Wesley", "Zach", "Syed"];
+      names.forEach(function(name){
+        Characters.insert({
+          name: name,
+          icon: name.charAt(0).toLowerCase() + name.slice(1) + '.jpeg',
+          stam: 100
+        });
+      });
+    }
   });
 }
