@@ -4,10 +4,19 @@
 </head>
 
 <body>
+ {{> main}}}
+</body>
+
+
+
+<template name="main">
   <header>
     <h1>HACK QUEST</h1>
     <span class="header-links">
-      {{#if currentUser}} {{> loginButtons}} {{/if}}
+      {{#if currentUser}} 
+        {{> loginButtons}} 
+        <button class="newGame">New Game</button>
+      {{/if}}
     </span>
   </header>
 
@@ -16,13 +25,17 @@
   {{else}}
 
   {{/unless}}
-</body>
+</template>
+
+
 
 <template name="loginScreen">
   <div class="mainLogin">
     {{> loginButtons align="right"}}
   </div>
 </template>
+
+
 
 <template name="gameScreen">
   <div class="container">
