@@ -60,6 +60,9 @@ if (Meteor.isClient) {
     },
     monsters: function(){
       return Games.findOne({userId: Meteor.userId()}).monsters;
+    },
+    characters: function(){
+      return Games.findOne({userId: Meteor.userId()}).characters;
     }
   });
 }
