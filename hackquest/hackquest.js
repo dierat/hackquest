@@ -47,7 +47,8 @@ if (Meteor.isClient) {
         characters: team.slice(0,4),
         monsters: monsters,
         messages: [
-          "You've created a new game!"
+          "You've created a new game!",
+          "Are you ready to battle the evil forces of web development?!!"
         ]
       });
     }
@@ -58,7 +59,6 @@ if (Meteor.isClient) {
       return Games.findOne({userId: Meteor.userId()}).messages;
     },
     monsters: function(){
-      console.log(Games.findOne({userId: Meteor.userId()}).monsters);
       return Games.findOne({userId: Meteor.userId()}).monsters;
     }
   });
