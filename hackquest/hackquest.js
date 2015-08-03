@@ -16,8 +16,15 @@ if (Meteor.isClient) {
 
   Template.main.events({
     'click .newGame': function(){
+      // grab id's from the characters and monsters documents
       var team = Characters.find().map(function(c){return c._id;});
       var monsters = Monsters.find().map(function(m){return m._id;});
+      // find and delete user's existing game if one exists
+      var currenGame = Games.findOne({userid: Meteor.userId()});
+      if (currenGame){
+        var gameId = currenGame._id;
+        Games.remove({_id: gameId});
+      }
       // create a new game save for the new user
       Games.insert({
         userid: Meteor.userId(),
