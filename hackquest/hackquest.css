@@ -36,7 +36,6 @@ header {
   display: none;
 }
 
-
 .battle {
   display: flex;
   justify-content: center;
@@ -90,12 +89,17 @@ header {
   text-align: right;
 }
 
-.console {
+.console,
+.blankScreen {
   text-align: center;
   font-size: 14px;
   line-height: 1.5em;
   max-width: 700px;
   margin: 0 auto;
+}
+
+.blankScreen {
+  margin-top: 50px;
 }
 
 li {
