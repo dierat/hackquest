@@ -28,7 +28,7 @@ if (Meteor.isClient) {
     var activeEntity = findGame().activeEntity;
     Games.update({_id: gameId}, {$set: 
       {
-        messages: ['It is now ' + activeEntity.name + "' turn!"],
+        messages: ['It is now ' + activeEntity.name + "'s turn!"],
         playerTurn: true
       }
     });
