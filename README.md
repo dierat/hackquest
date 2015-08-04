@@ -3,7 +3,6 @@
 A turn-based battle rpg where the valiant students at Hack Reacor battle the malevolent technologies of web development.
 
 Most basic features needed for version 1.0:
-(Would love to have all this done by the end of day 1)
 <ul>
   <li><strike>add user accounts</strike></li>
   <li><strike>add a login page that appears instead of main page if user is not logged in</strike></li>
