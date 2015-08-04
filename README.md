@@ -25,8 +25,9 @@ Most basic features needed for version 1.0:
   <li><strike>if there are no current team members, the player loses</strike></li>
   <li><strike>randomize team members when a new game is started</strike></li>
   <li><strike>add more 'actions' for monsters to take</strike></li>
-  <li>add game music</li>
+  <li><strike>add game music</strike></li>
   <li>add sound effects to actions?</li>
+  <li>shake targets when attacked?</li>
   <li>restyle login ui so it's consistent with the app</li>
   <li>refactor player event code into modular pieces that can be reused between them?</li>
   <li>basic security</li>
