@@ -21,8 +21,8 @@ Most basic features needed for version 1.0:
   <li><strike>after the player chooses an action for a character, the execution context should move to the next character in the list until it reaches the end</strike></li>
   <li><strike>monsters should have an ability that reduces a characters' stamina</strike></li>
   <li><strike>when the player has finished choosing the actions of the characters, the monster should attack a random character</strike></li>
-  <li>if a character's stamina is reduced to 0, s/he is removed from the current team</li>
-  <li>if there are no current team members, the player loses</li>
+  <li><strike>if a character's stamina is reduced to 0, s/he is removed from the current team</strike></li>
+  <li><strike>if there are no current team members, the player loses</strike></li>
   <li>randomize team members when a new game is started</li>
   <li>refactor player event code into modular pieces that can be reused between them</li>
 </ul>

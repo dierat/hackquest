@@ -95,7 +95,9 @@ if (Meteor.isClient){
       // else
       } else {
         // activate monsters' turn
-        monsterTurn();
+        setTimeout(function(){
+          monsterTurn();
+        }, 1500);
       }
     },
 
