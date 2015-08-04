@@ -22,16 +22,20 @@ if (Meteor.isClient) {
     Accounts._loginButtonsSession.set('dropdownVisible', true);
   };
 
-  var play = function(){
+  // this is a global function so all files have access to it
+  play = function(){
     console.log("play calling!");
     var gameId = findGame()._id;
-    var activeEntity = findGame().activeEntity;
-    Games.update({_id: gameId}, {$set: 
-      {
-        messages: ['It is now ' + activeEntity.name + "'s turn!"],
-        playerTurn: true
-      }
-    });
+    var activeEntity = findGame().characters[0];
+    setTimeout(function(){
+      Games.update({_id: gameId}, {$set: 
+        {
+          activeEntity: activeEntity,
+          messages: ['It is now ' + activeEntity.name + "'s turn!"],
+          playerTurn: true
+        }
+      });
+    }, 1500);
   };
 
   Template.main.events({
@@ -65,16 +69,13 @@ if (Meteor.isClient) {
         level: 0,
         characters: team.slice(0,4),
         monster: monsters[0],
-        activeEntity: team[0],
         playerTurn: false,
         messages: [
           "You've created a new game!",
           "Are you ready to battle the evil forces of web development?!!"
         ]
       });
-      setTimeout(function(){
-        play();
-      }, 2000);
+      play();
     }
   });
 
