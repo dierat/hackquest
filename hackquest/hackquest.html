@@ -40,36 +40,43 @@
 <template name="gameScreen">
   <div class="battle">
     <div class="monsters">
-      {{#each monsters}}
-        <div class="monster">
-          <img src={{this.icon}}>
-        </div>
-      {{/each}}
+      <div class="monster">
+        <img src={{monster.icon}}>
+      </div>
     </div>
+
+    <div class="vs">VS</div>
+
     <div class="characters">
       {{#each characters}}
-
         <p>
           <div class="character">
-
           <div class="characterImage">
             <img src={{this.icon}}>
           </div>
-
           <div class="characterInfo">
             <p>NAME: {{this.name}}</p>
             <p>STAM: {{this.stam}}</p>
           </div>
-
           </div>
         </p>
-
       {{/each}}
     </div>
   </div>
+
   <div class="console">
     {{#each messages}}
       <p>{{this}}</p>
     {{/each}}
+
+    {{#if playerTurn}}
+      <p>Please choose an action:</p>
+      <ul>
+        <li class="action code">code</li>
+        <li class="action google">google fu</li>
+        <li class="action giphy">giphy</li>
+      </ul>
+    {{/if}}
   </div>
+
 </template>
