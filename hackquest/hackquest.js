@@ -73,6 +73,9 @@ if (Meteor.isClient) {
     },
     playerTurn: function(){
       return findGame().playerTurn;
+    },
+    isActive: function(){
+      return this.id === findGame().activeEntity.id ? 'active' : '';
     }
   });
 }
