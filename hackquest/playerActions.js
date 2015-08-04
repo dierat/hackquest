@@ -1,5 +1,7 @@
 
-
+monsterTurn = function(){
+  console.log("monster's turn");
+};
 
 if (Meteor.isClient){  
   Template.gameScreen.events({
@@ -56,7 +58,7 @@ if (Meteor.isClient){
               Games.update({_id: gameId}, {$set: {
                 monster: newMonster,
                 level: currentLevel + 1,
-                messages: [newMonster.name + "has appeared!"]
+                messages: [newMonster.name + " has appeared!"]
               }});
             }, 1500);
 
@@ -83,13 +85,28 @@ if (Meteor.isClient){
         );
       }
       // figure out if that was the last character in the team
+      var team = findGame().characters;
+      var teamIds = findGame().characters.map(function(c){return c.id});
+      var activeIndex = teamIds.indexOf(findGame().activeEntity.id);
       // if not
+      if ( activeIndex !== (team.length - 1) ){
         // update active entity to be next character
+        var nextChar = team[activeIndex + 1];
+        setTimeout(function(){
+          Games.update({_id: gameId}, {$set: {
+            activeEntity: nextChar,
+            messages: ["It is now " + nextChar.name + "'s turn!"]
+          }});
+        }, 1500);
       // else
+      } else {
         // activate monsters' turn
+        monsterTurn();
+      }
     },
 
     'click .giphy': function(){
+      var gameId = findGame()._id;
       Games.update(
         {_id: findGame()._id},
         {$set: 
@@ -97,6 +114,25 @@ if (Meteor.isClient){
           {messages: [ "giphy fail! Everyone laughed at " + findGame().activeEntity.name + "!" ]}
         }
       );
+      // figure out if that was the last character in the team
+      var team = findGame().characters;
+      var teamIds = findGame().characters.map(function(c){return c.id});
+      var activeIndex = teamIds.indexOf(findGame().activeEntity.id);
+      // if not
+      if ( activeIndex !== (team.length - 1) ){
+        // update active entity to be next character
+        var nextChar = team[activeIndex + 1];
+        setTimeout(function(){
+          Games.update({_id: gameId}, {$set: {
+            activeEntity: nextChar,
+            messages: ["It is now " + nextChar.name + "'s turn!"]
+          }});
+        }, 1500);
+      // else
+      } else {
+        // activate monsters' turn
+        monsterTurn();
+      }
     }
 
   });
