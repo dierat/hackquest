@@ -8,7 +8,7 @@ if (Meteor.isClient){
       // if the action was successful
       if (hit){
         // figure out how much code was written and what the monster has left
-        var code = Math.floor(Math.random() * 15) + 5;
+        var code = Math.floor(Math.random() * 50) + 5;
         var monsterStam = findGame().monster.stam - code;
 
         // if the monster is still alive
