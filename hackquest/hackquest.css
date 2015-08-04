@@ -49,7 +49,7 @@ header {
 
 .monsters,
 .characters {
-  border: 1px solid white;
+  
   max-width: 350px;
   margin: 10px;
   padding: 10px;
@@ -63,11 +63,12 @@ header {
 
 .characters {
   width: 100%;
+  margin: 0 20px;
 }
 
 .monsters {
   justify-content: space-around;
-  max-width: 500px;
+  max-width: 100px;
 }
 
 .character {
