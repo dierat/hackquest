@@ -26,7 +26,10 @@ monsterTurn = function(){
   var gameId = findGame()._id;
   var monster = findGame().monster;
   var team = findGame().characters;
-  Games.update({_id: gameId}, {$set: {playerTurn: false}});
+  Games.update({_id: gameId}, {$set: {
+    playerTurn: false,
+    activeEntity: null
+  }});
   // figure out if it's a hit
   var hit = Math.random() > 0.15;
   if (hit){
