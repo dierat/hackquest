@@ -23,7 +23,11 @@
   {{#unless currentUser}}
     {{> loginScreen}}
   {{else}}
-    {{> gameScreen}}
+    {{#if currentGame}}
+      {{> gameScreen}}
+    {{else}}
+      {{> blankScreen}}
+    {{/if}}
   {{/unless}}
 </template>
 
@@ -32,6 +36,14 @@
 <template name="loginScreen">
   <div class="mainLogin">
     {{> loginButtons align="right"}}
+  </div>
+</template>
+
+
+<template name="blankScreen">
+  <div class="blankScreen">
+    <p>Welcome to HackQuest where you can battle the evil technologies of web development!</p>
+    <p>Hit the 'New Game' button to start!</p>
   </div>
 </template>
 
