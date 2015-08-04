@@ -83,10 +83,13 @@ header {
 
 .characterImage img {
   max-width: 70px;
+  margin-top: 5px;
+  margin-left: 5px;
 }
 
 .characterInfo {
   text-align: right;
+  margin-right: 5px;
 }
 
 .console,
