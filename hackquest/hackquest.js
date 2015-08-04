@@ -26,15 +26,12 @@ if (Meteor.isClient) {
     console.log("play calling!");
     var gameId = findGame()._id;
     var activeEntity = findGame().activeEntity;
-    if (findGame().playerTurn){
-      Games.update({_id: gameId}, {$set: 
-        {
-          messages: [
-            'It is now ' + activeEntity.name + "' turn!"
-          ]
-        }
-      });
-    }
+    Games.update({_id: gameId}, {$set: 
+      {
+        messages: ['It is now ' + activeEntity.name + "' turn!"],
+        playerTurn: true
+      }
+    });
   };
 
   Template.main.events({
@@ -69,7 +66,7 @@ if (Meteor.isClient) {
         characters: team.slice(0,4),
         monster: monsters[0],
         activeEntity: team[0],
-        playerTurn: true,
+        playerTurn: false,
         messages: [
           "You've created a new game!",
           "Are you ready to battle the evil forces of web development?!!"
@@ -77,7 +74,7 @@ if (Meteor.isClient) {
       });
       setTimeout(function(){
         play();
-      }, 1000);
+      }, 2000);
     }
   });
 
