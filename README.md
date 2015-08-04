@@ -16,15 +16,14 @@ Most basic features needed for version 1.0:
   <li><strike>list current messages in the game console</strike></li>
   <li><strike>list of current monsters in a collection and shown on screen (icon + name?)</strike></li>
   <li><strike>list current team members on screen (name, photo, and stamina)</strike></li>
-  <li>characters should have abilities that reduces a monster's health</li>
+  <li><strike>characters should have abilities that reduces a monster's health</strike></li>
+  <li><strike>if a monster's health is reduced to 0, it is removed from the current game</strike></li>
+  <li><strike>if the last monster was defeated, the player wins</strike></li>
   <li>after the player chooses an action for a character, the execution context should move to the next character in the list until it reaches the end</li>
-  <li>if a monster's health is reduced to 0, it is removed from the current game</li>
-  <li>if the last monster was defeated, the player wins</li>
   <li>monsters should have an ability that reduces a characters' stamina</li>
   <li>when the player has finished choosing the actions of the characters, each monster should attack a random character</li>
   <li>if a character's stamina is reduced to 0, s/he is removed from the current team</li>
   <li>if there are no current team members, the player loses</li>
-  <li>after a game ends, show a win or lose message</li>
 </ul>
 
 Additional features for version 1.1:
