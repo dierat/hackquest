@@ -24,5 +24,8 @@ Most basic features needed for version 1.0:
   <li><strike>if a character's stamina is reduced to 0, s/he is removed from the current team</strike></li>
   <li><strike>if there are no current team members, the player loses</strike></li>
   <li>randomize team members when a new game is started</li>
-  <li>refactor player event code into modular pieces that can be reused between them</li>
+  <li>add game music</li>
+  <li>add sound effects to actions?</li>
+  <li>restyle login ui so it's consistent with the app</li>
+  <li>refactor player event code into modular pieces that can be reused between them?</li>
 </ul>
