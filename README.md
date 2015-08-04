@@ -24,6 +24,7 @@ Most basic features needed for version 1.0:
   <li><strike>if a character's stamina is reduced to 0, s/he is removed from the current team</strike></li>
   <li><strike>if there are no current team members, the player loses</strike></li>
   <li><strike>randomize team members when a new game is started</strike></li>
+  <li>add more 'actions' for monsters to take</li>
   <li>add game music</li>
   <li>add sound effects to actions?</li>
   <li>restyle login ui so it's consistent with the app</li>
