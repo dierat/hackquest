@@ -27,7 +27,6 @@ if (Meteor.isClient){
               messages: [ findGame().activeEntity.name + " wrote " + code + " lines of code!" ]}
             }
           );
-          console.log(findGame().monster.name + " now has " + monsterStam + "stamina!");
 
         // if the monster is dead
         } else {
@@ -125,7 +124,6 @@ if (Meteor.isClient){
         }, 1500);
       // else
       } else {
-        console.log("inside else statement");
         // activate monsters' turn
         monsterTurn();
       }
