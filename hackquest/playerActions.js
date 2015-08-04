@@ -34,6 +34,12 @@ if (Meteor.isClient){
 
         // if the monster is dead
         } else {
+          Games.update(
+            {_id: gameId},
+            {$addToSet: 
+              {messages: findGame().monster.name + " has been defeated!"}
+            }
+          );
           // look for next monster
           var currentLevel = findGame().level;
           var nextMonster = Monsters.findOne({level: currentLevel + 1});
@@ -46,18 +52,23 @@ if (Meteor.isClient){
               stam: nextMonster.stam,
               icon: nextMonster.icon
             };
-            Games.update({_id: gameId}, {$set: {
-              monster: newMonster,
-              level: currentLevel + 1
-            }});
+            setTimeout(function(){
+              Games.update({_id: gameId}, {$set: {
+                monster: newMonster,
+                level: currentLevel + 1,
+                messages: [newMonster.name + "has appeared!"]
+              }});
+            }, 1500);
 
           // if that was the last monster
           } else {
             // update game with win message
-            Games.update({_id: gameId}, {$set: {
-              messages: ["You won! Please hit the 'New Game' button to play again!"],
-              playerTurn: false
-            }});          
+            setTimeout(function(){
+              Games.update({_id: gameId}, {$set: {
+                messages: ["You won! Please hit the 'New Game' button to play again!"],
+                playerTurn: false
+              }});
+            }, 1500);    
           }
         }
 
@@ -67,7 +78,7 @@ if (Meteor.isClient){
         Games.update(
           {_id: gameId},
           {$set: 
-            {messages: [ "You didn't write a single line!" ]}
+            {messages: [ findGame().activeEntity.name + " didn't write a single line!" ]}
           }
         );
       }
