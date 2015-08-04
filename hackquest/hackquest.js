@@ -38,6 +38,12 @@ if (Meteor.isClient) {
     }, 1500);
   };
 
+  Template.main.helpers({
+    currentGame: function(){
+      return findGame() !== undefined;
+    }
+  });
+
   Template.main.events({
     'click .newGame': function(){
       // grab id's from the characters and monsters documents
