@@ -22,15 +22,7 @@ if (Meteor.isClient) {
 
   Template.main.events({
     'click .newGame': function(){
-      // grab id's from the characters and monsters documents
-      var team = Characters.find().map(function(c){
-        return {
-          id: c._id,
-          name: c.name,
-          icon: c.icon,
-          stam: c.stam,
-        };
-      });
+      // grab monster objects for new game document
       var monsters = Monsters.find().map(function(m){
         return {
           id: m._id,
@@ -39,6 +31,24 @@ if (Meteor.isClient) {
           stam: m.stam,
         };
       });
+      // grab 4 random characters for new team
+      var allChars = Characters.find().map(function(c){
+        return {
+          id: c._id,
+          name: c.name,
+          icon: c.icon,
+          stam: c.stam,
+        };
+      });
+      var ranIndexes = [];
+      var team = [];
+      while (ranIndexes.length < 4){
+        var ran = Math.floor(Math.random() * 25);
+        if (ranIndexes.indexOf(ran) < 0){
+          ranIndexes.push(ran);
+          team.push(allChars[ran]);
+        }
+      }
       // find and delete user's existing game if one exists
       var currenGame = findGame();
       if (currenGame){
@@ -49,7 +59,7 @@ if (Meteor.isClient) {
       Games.insert({
         userId: Meteor.userId(),
         level: 0,
-        characters: team.slice(0,4),
+        characters: team,
         monster: monsters[0],
         playerTurn: false,
         messages: [
