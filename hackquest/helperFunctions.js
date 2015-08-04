@@ -9,7 +9,6 @@ findGame = function(){
 };
 
 play = function(){
-  console.log("play calling!");
   var gameId = findGame()._id;
   var activeEntity = findGame().characters[0];
   setTimeout(function(){
@@ -24,7 +23,6 @@ play = function(){
 };
 
 monsterTurn = function(){
-  console.log("inside monsterTurn");
   var gameId = findGame()._id;
   var monster = findGame().monster;
   var team = findGame().characters;
@@ -32,7 +30,6 @@ monsterTurn = function(){
   // figure out if it's a hit
   var hit = Math.random() > 0.15;
   if (hit){
-    console.log("it's a hit!");
     // pick a random character
     var ranIndex = Math.floor(Math.random() * 4);
     var target = team[ranIndex];
@@ -55,6 +52,7 @@ monsterTurn = function(){
       }});
     }, 1500);
   }
+  // pass execution back to player
   setTimeout(function(){
     play();
   }, 1500);
