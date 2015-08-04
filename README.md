@@ -19,20 +19,11 @@ Most basic features needed for version 1.0:
   <li><strike>characters should have abilities that reduces a monster's health</strike></li>
   <li><strike>if a monster's health is reduced to 0, it is removed from the current game</strike></li>
   <li><strike>if the last monster was defeated, the player wins</strike></li>
+  <li>refactor player event code into modular pieces that can be reused between them</li>
   <li>after the player chooses an action for a character, the execution context should move to the next character in the list until it reaches the end</li>
   <li>monsters should have an ability that reduces a characters' stamina</li>
   <li>when the player has finished choosing the actions of the characters, each monster should attack a random character</li>
   <li>if a character's stamina is reduced to 0, s/he is removed from the current team</li>
   <li>if there are no current team members, the player loses</li>
-</ul>
-
-Additional features for version 1.1:
-<ul>
-  <li>have styling for which entity is current choosing/performing an action</li>
-  <li>add more abilities to characters for the user to choose from</li>
-  <li>add more abilities to monsters that the program chooses randomly</li>
-  <li>add animations for who is acting and who is being acted upon</li>
-  <li>add sound effects</li>
-  <li>add music</li>
-  <li>ability to choose team members when starting a new game</li>
+  <li>randomize team members when a new game is started</li>
 </ul>
