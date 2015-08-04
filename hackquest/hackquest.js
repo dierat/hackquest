@@ -2,14 +2,6 @@ Characters = new Mongo.Collection('characters');
 Monsters = new Mongo.Collection('monsters');
 Games = new Mongo.Collection('games');
 
-// this method is globally defined so it can be used across files
-findGame = function(){
-  // returns the player's game document from the Games collection
-  if (Games){
-    return Games.findOne({ userId: Meteor.userId() });
-  }
-};
-
 
 if (Meteor.isClient) {
   // Login requires username instead of e-mail address for easier testing.
@@ -20,22 +12,6 @@ if (Meteor.isClient) {
   // Renders the login panel as uncollapsed on login_page template.
   Template.loginScreen.rendered = function() {
     Accounts._loginButtonsSession.set('dropdownVisible', true);
-  };
-
-  // this is a global function so all files have access to it
-  play = function(){
-    console.log("play calling!");
-    var gameId = findGame()._id;
-    var activeEntity = findGame().characters[0];
-    setTimeout(function(){
-      Games.update({_id: gameId}, {$set: 
-        {
-          activeEntity: activeEntity,
-          messages: ['It is now ' + activeEntity.name + "'s turn!"],
-          playerTurn: true
-        }
-      });
-    }, 1500);
   };
 
   Template.main.helpers({
