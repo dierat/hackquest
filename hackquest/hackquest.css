@@ -3,30 +3,40 @@ body {
   color: white;
   background-color: black;
   font-family: 'Press Start 2P', cursive;
+  line-height: 1.5em;
 }
 
 header {
   display: flex;
   justify-content: center;
-  boder-bottom: 1px white;
-}
-
-.header-links {
-  margin: 20px;
 }
 
 .newGame {
   font-family: 'Press Start 2P', cursive;
   padding: 5px;
+  border-radius: 3px;
+  margin-right: 5px;
+  margin: 20px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  height: 25px;
 }
 
+/* name on login button in header */
+header #login-name-link {
+  cursor: pointer;
+}
+
+.headerLogin {
+  margin-top: 20px;
+}
 
 /* main login page */
 
 .mainLogin {
   text-align: center;
   margin-top: 100px;
-  margin-left: 200px;
 }
 
 /* 'Sign in' dropdown link on main login page */
@@ -35,6 +45,36 @@ header {
 .mainLogin .login-close-text {
   display: none;
 }
+
+/* username text field on main login screen */
+#login-username,
+/* password text field on main login screen */
+#login-password,
+/* second password text field on main login screen */
+#login-password-again {
+  font-family: 'Press Start 2P', cursive;
+  border: none;
+  font-size: 12px;
+  padding: 4px;
+}
+
+/* error message on main login screen */
+.message.error-message {
+  font-size: 12px;
+  color: red;
+}
+
+/* 'Sign in' or 'Create account' button on main login screen */
+#login-buttons-password {
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.additional-link {
+  cursor: pointer;
+  font-size: 12px;
+}
+
 
 .battle {
   display: flex;
@@ -103,6 +143,7 @@ header {
 
 .blankScreen {
   margin-top: 50px;
+  font-size: 18px
 }
 
 li {
