@@ -22,6 +22,13 @@ play = function(){
   }, 1500);
 };
 
+var monsterActions = [
+  'undefined is not a function!',
+  'Uncaught SyntaxError: Unexpected token ILLEGAL!',
+  'the documentation is purposefully confusing!',
+  '"this" is undefined!'
+];
+
 monsterTurn = function(){
   var gameId = findGame()._id;
   var monster = findGame().monster;
@@ -33,6 +40,9 @@ monsterTurn = function(){
   // figure out if it's a hit
   var hit = Math.random() > 0.15;
   if (hit){
+    // pick a random action
+    var ranMsgIndex = Math.floor(Math.random() * monsterActions.length);
+    var message = monsterActions[ranMsgIndex];
     // pick a random character
     var ranIndex = Math.floor(Math.random() * team.length);
     var target = team[ranIndex];
@@ -42,7 +52,10 @@ monsterTurn = function(){
     target.stam -= damage;
     setTimeout(function(){
       Games.update({_id: gameId}, {$set: {
-        messages: [ monster.name + " did " + damage + " damage to " + target.name + "'s stamina!" ]
+        messages: [ 
+          message,
+          monster.name + " did " + damage + " damage to " + target.name + "'s stamina!"
+        ]
       }});
     }, 1500);
 
@@ -83,10 +96,10 @@ monsterTurn = function(){
         messages: monster.name + " is stunned by your awesomeness!"
       }});
       play();
-    }, 1500);
+    }, 2500);
   }
   // pass execution back to player
   setTimeout(function(){
     play();
-  }, 1500);
+  }, 2500);
 };
