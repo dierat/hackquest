@@ -40,6 +40,7 @@ monsterTurn = function(){
   // figure out if it's a hit
   var hit = Math.random() > 0.15;
   if (hit){
+    document.getElementsByTagName('audio')[2].play();
     // pick a random action
     var ranMsgIndex = Math.floor(Math.random() * monsterActions.length);
     var message = monsterActions[ranMsgIndex];
