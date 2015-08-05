@@ -30,6 +30,4 @@ Most basic features needed for version 1.0:
   <li>add sound effects to actions?</li>
   <li>shake targets when attacked?</li>
   <li>refactor player event code into modular pieces that can be reused between them?</li>
-  <li>basic security</li>
-  <li>pub/sub</li>
 </ul>

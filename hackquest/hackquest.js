@@ -22,6 +22,8 @@ if (Meteor.isClient) {
 
   Template.main.events({
     'click .newGame': function(){
+      // play battle music
+      document.getElementsByTagName("audio")[0].play();
       // grab monster objects for new game document
       var monsters = Monsters.find().map(function(m){
         return {
@@ -93,6 +95,10 @@ if (Meteor.isClient) {
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
+    fillDatabase();
+  });
+
+  var fillDatabase = function(){
     if (Characters.find().count() === 0){
       var names = ["Alex", "Andrey", "Charles", "Chris", "Cliff", "David", "Diedra", "Derek", "Eric", "Greg", "Hailey", "Jonathan", "Kamerynn", "Kevin", "Ken", "Logan", "Luke", "Marq", "Nate", "Nick", "Owen", "Peter", "Wesley", "Zach", "Syed"];
       names.forEach(function(name){
@@ -124,6 +130,18 @@ if (Meteor.isServer) {
         });
         count++;
       });
+    }
+  };
+
+  Meteor.methods({
+    resetDatabase: function(){
+      Monsters.remove({});
+      Characters.remove({});
+      Games.remove({});
+      fillDatabase();
+    },
+    clearUsers: function(){
+      Meteor.users.remove({});
     }
   });
 }
