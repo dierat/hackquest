@@ -8,7 +8,7 @@ if (Meteor.isClient){
       // if the action was successful
       if (hit){
         // figure out how much code was written and what the monster has left
-        document.getElementsByTagName("audio")[1].play();
+        playSound(1);
         var code = Math.floor(Math.random() * 40) + 5;
         var monsterStam = findGame().monster.stam - code;
 
@@ -108,7 +108,7 @@ if (Meteor.isClient){
 
       // if the action was successful
       if (hit){
-        document.getElementsByTagName("audio")[1].play();
+        playSound(1);
         // figure out how much code was written and what the monster has left
         var code = Math.floor(Math.random() * 75) + 15;
         var monsterStam = findGame().monster.stam - code;
@@ -204,10 +204,7 @@ if (Meteor.isClient){
     },
 
     'click .giphy': function(){
-      document.getElementsByTagName("audio")[3].play();
-      setTimeout(function(){
-        document.getElementsByTagName("audio")[3].pause();
-      }, 2000);
+      playSound(3, true);
       var gameId = findGame()._id;
       Games.update(
         {_id: findGame()._id},
