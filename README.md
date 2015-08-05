@@ -27,7 +27,5 @@ Most basic features needed for version 1.0:
   <li><strike>add more 'actions' for monsters to take</strike></li>
   <li><strike>add game music</strike></li>
   <li><strike>restyle login ui so it's consistent with the app</strike></li>
-  <li>add sound effects to actions?</li>
-  <li>shake targets when attacked?</li>
-  <li>refactor player event code into modular pieces that can be reused between them?</li>
+  <li><strike>add sound effects to actions</strike></li>
 </ul>
