@@ -1,5 +1,16 @@
 // these methods are globally defined so they can be used across files
 
+// index is the index of this audio file as listed in hackquest.html
+playSound = function(index, playFromBeginning){
+  var audioElem = document.getElementsByTagName("audio")[index];
+  if (playFromBeginning){
+    audioElem.currentTime = 0;
+  }
+  audioElem.play();
+  setTimeout(function(){
+    audioElem.pause();
+  }, 1500);
+};
 
 findGame = function(){
   // returns the player's game document from the Games collection
@@ -40,7 +51,7 @@ monsterTurn = function(){
   // figure out if it's a hit
   var hit = Math.random() > 0.15;
   if (hit){
-    document.getElementsByTagName('audio')[2].play();
+    playSound(2);
     // pick a random action
     var ranMsgIndex = Math.floor(Math.random() * monsterActions.length);
     var message = monsterActions[ranMsgIndex];
