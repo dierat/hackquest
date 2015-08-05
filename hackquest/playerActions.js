@@ -204,6 +204,10 @@ if (Meteor.isClient){
     },
 
     'click .giphy': function(){
+      document.getElementsByTagName("audio")[3].play();
+      setTimeout(function(){
+        document.getElementsByTagName("audio")[3].pause();
+      }, 2000);
       var gameId = findGame()._id;
       Games.update(
         {_id: findGame()._id},
