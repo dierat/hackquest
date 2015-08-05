@@ -16,7 +16,6 @@ monsterTurn = function(){
   // figure out if it's a hit
   var hit = Math.random() > 0.15;
   if (hit){
-    playSound(2);
     // pick a random action
     var ranMsgIndex = Math.floor(Math.random() * monsterActions.length);
     var message = monsterActions[ranMsgIndex];
@@ -28,6 +27,7 @@ monsterTurn = function(){
     // update target's stam
     target.stam -= damage;
     setTimeout(function(){
+      playSound(2, true);
       Games.update({_id: gameId}, {$set: {
         messages: [ 
           message,
