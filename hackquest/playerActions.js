@@ -8,6 +8,7 @@ if (Meteor.isClient){
       // if the action was successful
       if (hit){
         // figure out how much code was written and what the monster has left
+        document.getElementsByTagName("audio")[1].play();
         var code = Math.floor(Math.random() * 40) + 5;
         var monsterStam = findGame().monster.stam - code;
 
@@ -107,6 +108,7 @@ if (Meteor.isClient){
 
       // if the action was successful
       if (hit){
+        document.getElementsByTagName("audio")[1].play();
         // figure out how much code was written and what the monster has left
         var code = Math.floor(Math.random() * 75) + 15;
         var monsterStam = findGame().monster.stam - code;
